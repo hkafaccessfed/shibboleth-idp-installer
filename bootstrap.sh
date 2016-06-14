@@ -23,15 +23,15 @@ set -e
 #  Your schacHomeOrganizationType.
 #  See http://www.terena.org/activities/tf-emc2/schacreleases.html
 #  Relevant values are:
-#   urn:mace:terena.org:schac:homeOrganizationType:au:university
-#   urn:mace:terena.org:schac:homeOrganizationType:au:research-institution
-#   urn:mace:terena.org:schac:homeOrganizationType:au:other
-#HOME_ORG_TYPE=urn:mace:terena.org:schac:homeOrganizationType:au:university
+#   urn:mace:terena.org:schac:homeOrganizationType:hk:university
+#   urn:mace:terena.org:schac:homeOrganizationType:hk:research-institution
+#   urn:mace:terena.org:schac:homeOrganizationType:hk:other
+#HOME_ORG_TYPE=urn:mace:terena.org:schac:homeOrganizationType:hk:university
 
 #  The attribute used for AuEduPersonSharedToken and EduPersonTargetedId
 #  generation.
-#  See http://wiki.aaf.edu.au/tech-info/attributes/auedupersonsharedtoken
-#      http://wiki.aaf.edu.au/tech-info/attributes/edupersontargetedid
+#  See http://hkafaccessfed.github.io/info/attributes/auedupersonsharedtoken
+#      http://hkafaccessfed.github.io/info/attributes/edupersontargetedid
 #  IMPORTANT: The generation of AuEduPersonSharedToken and EduPersonTargetedId
 #  require the value from the specified source attribute. If the value changes,
 #  it will change the AuEduPersonSharedToken and EduPersonTargetedId. This will
@@ -70,11 +70,11 @@ CREDENTIAL_BACKUP_PATH=$ASSETS/idp/credentials
 LDAP_PROPERTIES=$ASSETS/idp/conf/ldap.properties
 APACHE_IDP_CONFIG=$ASSETS/apache/idp.conf
 
-GIT_REPO=https://github.com/ausaccessfed/shibboleth-idp-installer.git
-GIT_BRANCH=master
+GIT_REPO=https://github.com/hkafaccessfed/shibboleth-idp-installer.git
+GIT_BRANCH=hk/branding
 
-FR_TEST_REG=https://manager.test.aaf.edu.au/federationregistry/registration/idp
-FR_PROD_REG=https://manager.aaf.edu.au/federationregistry/registration/idp
+FR_TEST_REG=https://manager.test.hkaf.edu.hk/federationregistry/registration/idp
+FR_PROD_REG=https://manager.hkaf.edu.hk/federationregistry/registration/idp
 
 function ensure_mandatory_variables_set {
   for var in HOST_NAME ENVIRONMENT ORGANISATION_NAME ORGANISATION_BASE_DOMAIN \
@@ -254,7 +254,7 @@ To make your IdP functional follow these steps:
    indicating your IdP is pending.
 
    You should now continue with the installation steps documented at
-   http://ausaccessfed.github.io/shibboleth-idp-installer/installation.html
+   http://hkafaccessfed.github.io/shibboleth-idp-installer/installation.html
 
 EOF
 }
@@ -269,9 +269,9 @@ function duplicate_execution_warning {
     echo -e "\n\n-----"
     echo "The bootstrap process has already been executed and could be destructive if run again."
     echo "It is likely you want to run an update instead."
-    echo "Please see http://ausaccessfed.github.io/shibboleth-idp-installer/customisation.html for further details."
+    echo "Please see http://hkafaccessfed.github.io/shibboleth-idp-installer/customisation.html for further details."
     echo -e "\n\nIn certain cases you may need to re-run the bootstrap process if you've made an error during initial installation."
-    echo "Please see http://ausaccessfed.github.io/shibboleth-idp-installer/installation.html to disable this warning."
+    echo "Please see http://hkafaccessfed.github.io/shibboleth-idp-installer/installation.html to disable this warning."
     echo -e "-----\n\n"
     exit 0
   fi
