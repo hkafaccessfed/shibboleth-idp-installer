@@ -19,7 +19,7 @@ The installation process will:
 
 * Install Jetty with Shibboleth IdP. Jetty runs on port `8080` and creates the Shibboleth IdP web app context `/idp`. Apache configuration serves this on port `443` through a reverse proxy. Jetty also listens on port `8443` to support ECP.
 
-* Install a MariaDB instance. A database is created (name: `idp_db`, user: `idp_admin`) with [these schemas](https://github.com/ausaccessfed/shibboleth-idp-installer/tree/master/templates/db) populated.
+* Install a MariaDB instance. A database is created (name: `idp_db`, user: `idp_admin`) with [these schemas](https://github.com/hkafaccessfed/shibboleth-idp-installer/tree/master/templates/db) populated.
 
 * Install NTP for time syncronisation.
 
@@ -38,8 +38,7 @@ The following commands MUST be executed as the **root** user. Start the process 
 1.  Run the command:
 
     ```
-    curl https://raw.githubusercontent.com/ausaccessfed/shibboleth-idp-installer/\
-    master/bootstrap.sh > bootstrap.sh && chmod u+x bootstrap.sh
+    curl https://raw.githubusercontent.com/hkafaccessfed/shibboleth-idp-installer/hk/branding/bootstrap.sh > bootstrap.sh && chmod u+x bootstrap.sh
     ```
 
 2.  Edit the bootstrap file:
@@ -143,13 +142,13 @@ Undertake the following steps:
 
 ### 2. Recieve Shibboleth IdP Approval
 
-Following approval by the AAF you'll **receive a second email**.
+Following approval by the HKAF you'll **receive a second email**.
 
-Please wait for at least 4 hours after recieving this email, so backend processes and data sync is definetly completed, before undertaking the instructions it contains to gain administrative rights over your Shibboleth IdP within AAF management tools.
+Please wait for at least 4 hours after receiving this email, so back end processes and data sync is definitely completed, before undertaking the instructions it contains to gain administrative rights over your Shibboleth IdP within HKAF management tools.
 
 ### 3. Add Backchannel certificates
 
-The final installation step involves providing your backchannel certificates to the AAF management tool, Federation Registry.
+The final installation step involves providing your backchannel certificates to the HKAF management tool, Federation Registry.
 
 Access your Shibboleth IdP record within Federation Registry and navigate to *SAML -> Certificates*
 
